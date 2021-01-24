@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class AddParkingViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -22,7 +23,7 @@ class AddParkingViewController: UIViewController, CLLocationManagerDelegate {
     let geocoder = CLGeocoder()
     
     var buildingCodeData:String!
-    var hoursOfParkingData:Int!
+    var hoursOfParkingData:String!
     var carPlateNumberData:String!
     var suitNumberData:String!
     var parkingLocationLat:String!
@@ -53,23 +54,6 @@ class AddParkingViewController: UIViewController, CLLocationManagerDelegate {
             return
         }
         else{
-            switch HoursOfParking.selectedSegmentIndex {
-            case 0:
-                hoursOfParkingData = 0
-            case 1:
-                hoursOfParkingData = 1
-            case 2:
-                hoursOfParkingData = 2
-            case 3:
-                hoursOfParkingData = 3
-                
-            default:
-                hoursOfParkingData = 0
-            }
-            
-            dateOfParkingData = DateOfParking.date
-            print(Date())
-            print(DateOfParking.date)
             
             if(Date() > DateOfParking.date)
             {
@@ -78,6 +62,21 @@ class AddParkingViewController: UIViewController, CLLocationManagerDelegate {
             }
             else{
                 
+                switch HoursOfParking.selectedSegmentIndex {
+                case 0:
+                    hoursOfParkingData = "1 Hour or Less"
+                case 1:
+                    hoursOfParkingData = "4 Hours"
+                case 2:
+                    hoursOfParkingData = "12 Hours"
+                case 3:
+                    hoursOfParkingData = "24 Hours"
+                    
+                default:
+                    hoursOfParkingData = "1 Hour or Less"
+                }
+                
+                dateOfParkingData = DateOfParking.date
                 buildingCodeData =  BuildingCode.text!
                 carPlateNumberData = CarPlateNumber.text!
                 suitNumberData =  SuitNumber.text!
@@ -125,20 +124,40 @@ extension AddParkingViewController{
             
             if let placemarks = placemarks, let placemark = placemarks.first{
                 
-                self.parkingLocationLat = "\(placemark.location?.coordinate.latitude)"
-                self.parkingLocationLon = "\(placemark.location?.coordinate.longitude)"
+                self.parkingLocationLat = "\(placemark.location!.coordinate.latitude)"
+                self.parkingLocationLon = "\(placemark.location!.coordinate.longitude)"
                 
-                print(buildingCodeData)
-                print(hoursOfParkingData)
-                print(suitNumberData)
-                print(carPlateNumberData)
-                print(dateOfParkingData)
-                print(parkingLocationLat)
-                print(parkingLocationLon)
+                let db = Firestore.firestore()
                 
-                
-            
-                
+                db.collection("Parking").addDocument(data: [
+                    "BCode" : buildingCodeData,
+                    "Hours" : hoursOfParkingData,
+                    "SuitNo" : suitNumberData,
+                    "CNumber" : carPlateNumberData,
+                    "Date" : dateOfParkingData,
+                    "Lat" : parkingLocationLat,
+                    "Lon" : parkingLocationLon
+//                    "E-mail" : Auth.auth().currentUser?.email
+                ]){ err in
+                    
+                    if(err != nil)
+                    {
+                        print(err)
+                        self.alert(Title: "Saving Document Unsucessful ", Message: nil)
+                        
+                    }
+                    else
+                    {
+                        self.BuildingCode.text = ""
+                        self.HoursOfParking.selectedSegmentIndex = 0
+                        self.CarPlateNumber.text = ""
+                        self.SuitNumber.text = ""
+                        self.ParkingLocation.text = ""
+                        self.DateOfParking.date = Date()
+                        self.alert(Title: "Parking added sucessfully", Message: nil)
+                    }
+                    
+                }
                 
             }else{
                 self.alert(Title: "Address Not Found", Message: "Please check the address and try again!")

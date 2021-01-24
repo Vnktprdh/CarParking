@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		921393C125BE171100C37790 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921393BF25BE171100C37790 /* Main.storyboard */; };
 		921393C325BE171600C37790 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921393C225BE171600C37790 /* Assets.xcassets */; };
 		921393C625BE171600C37790 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921393C425BE171600C37790 /* LaunchScreen.storyboard */; };
+		921393E425BE218900C37790 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 921393E325BE218900C37790 /* GoogleService-Info.plist */; };
+		921393E725BE222100C37790 /* AddParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921393E625BE222100C37790 /* AddParkingViewController.swift */; };
 		EA96C6DD5A2CC9C6EF409164 /* Pods_CarParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0942DC1BDC5200ED83B8F2F /* Pods_CarParking.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		921393C225BE171600C37790 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		921393C525BE171600C37790 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		921393C725BE171600C37790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		921393E325BE218900C37790 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		921393E625BE222100C37790 /* AddParkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParkingViewController.swift; sourceTree = "<group>"; };
 		D0942DC1BDC5200ED83B8F2F /* Pods_CarParking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarParking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -48,7 +52,6 @@
 				6C648AFA0FBE2461E5F3FE7A /* Pods-CarParking.debug.xcconfig */,
 				5A5A76DBA576A1F2B4040B2B /* Pods-CarParking.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,10 +84,12 @@
 		921393B825BE171100C37790 /* CarParking */ = {
 			isa = PBXGroup;
 			children = (
+				921393E325BE218900C37790 /* GoogleService-Info.plist */,
 				921393B925BE171100C37790 /* AppDelegate.swift */,
 				921393BB25BE171100C37790 /* SceneDelegate.swift */,
 				921393BD25BE171100C37790 /* ViewController.swift */,
 				921393BF25BE171100C37790 /* Main.storyboard */,
+				921393E625BE222100C37790 /* AddParkingViewController.swift */,
 				921393C225BE171600C37790 /* Assets.xcassets */,
 				921393C425BE171600C37790 /* LaunchScreen.storyboard */,
 				921393C725BE171600C37790 /* Info.plist */,
@@ -152,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				921393C625BE171600C37790 /* LaunchScreen.storyboard in Resources */,
+				921393E425BE218900C37790 /* GoogleService-Info.plist in Resources */,
 				921393C325BE171600C37790 /* Assets.xcassets in Resources */,
 				921393C125BE171100C37790 /* Main.storyboard in Resources */,
 			);
@@ -207,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				921393BE25BE171100C37790 /* ViewController.swift in Sources */,
+				921393E725BE222100C37790 /* AddParkingViewController.swift in Sources */,
 				921393BA25BE171100C37790 /* AppDelegate.swift in Sources */,
 				921393BC25BE171100C37790 /* SceneDelegate.swift in Sources */,
 			);
@@ -358,6 +365,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CarParking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,6 +385,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CarParking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -288,7 +288,6 @@
                                 <state key="normal" title="Get Location"/>
                                 <connections>
                                     <action selector="getLocation:" destination="HXf-pu-A81" eventType="touchUpInside" id="QsJ-XL-EnR"/>
-                                    <segue destination="oWY-8Q-tpa" kind="show" identifier="GetLocation" id="Gby-DT-jtj"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car License Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXU-Tn-f4b">
@@ -336,6 +335,7 @@
                         <outlet property="Location" destination="Zva-0S-mGO" id="bkn-Hz-fym"/>
                         <outlet property="ParkingHours" destination="uQp-gY-BAl" id="21c-2K-gzm"/>
                         <outlet property="SuitNumber" destination="LZ3-mo-MPD" id="dFu-AB-4UJ"/>
+                        <segue destination="oWY-8Q-tpa" kind="show" identifier="GetLocation" id="Nzs-1F-SnB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CeX-Up-F2R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

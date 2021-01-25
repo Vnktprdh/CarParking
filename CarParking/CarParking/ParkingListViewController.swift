@@ -13,7 +13,7 @@ class ParkingListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        tableViewList.reloadData()
+        loadFireBase()
     }
     
     
@@ -23,8 +23,6 @@ class ParkingListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadFireBase()
-        
     }
     
     
@@ -67,7 +65,7 @@ class ParkingListViewController: UIViewController, UITableViewDelegate, UITableV
 extension ParkingListViewController{
     
     func loadFireBase() {
-        
+        initialArray = []
         Firestore.firestore().collection("Parking").getDocuments() { [self] (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")

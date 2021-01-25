@@ -98,6 +98,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             guard let response = response else {
                 if let error = error {
                     print("ERROR FOUND : \(error.localizedDescription)")
+                    self.alert(Title: error.localizedDescription, Message: nil)
                 }
                 return
             }
@@ -123,4 +124,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 struct Locations {
     var name : String
     var coordinates : CLLocationCoordinate2D
+}
+
+extension MapViewController{
+    func alert(Title:String, Message:String?) {
+        let alert = UIAlertController(title: Title, message: Message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

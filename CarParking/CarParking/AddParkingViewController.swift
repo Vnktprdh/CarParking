@@ -47,6 +47,9 @@ class AddParkingViewController: UIViewController, CLLocationManagerDelegate, UIT
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
     
     @IBAction func UseCurrentLocation(_ sender: Any) {
         

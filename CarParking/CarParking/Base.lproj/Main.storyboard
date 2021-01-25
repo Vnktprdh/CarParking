@@ -24,22 +24,6 @@
             </objects>
             <point key="canvasLocation" x="-1201" y="-182"/>
         </scene>
-        <!--Parking-->
-        <scene sceneID="Vqr-Hh-KP5">
-            <objects>
-                <viewController id="KAh-Wg-Qd0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eUV-ex-gEJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="kyX-ht-vUN"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Parking" image="viewfinder" catalog="system" id="c8b-PE-n7h"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8g4-lW-g3m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="868" y="122"/>
-        </scene>
         <!--Home-->
         <scene sceneID="24F-xI-amF">
             <objects>
@@ -51,7 +35,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Building Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cxN-rf-Ccq">
                                 <rect key="frame" x="20" y="194" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="m72-o7-83v">
                                 <rect key="frame" x="20" y="248" width="374" height="32"/>
@@ -78,10 +62,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="F2b-jb-NbG">
-                                <rect key="frame" x="20" y="461" width="374" height="216"/>
+                                <rect key="frame" x="20" y="511" width="374" height="216"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFS-zK-Htu">
-                                <rect key="frame" x="20" y="727" width="374" height="30"/>
+                                <rect key="frame" x="20" y="757" width="374" height="30"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <state key="normal" title="Add Parking">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,33 +80,46 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CA-7D-aDf">
+                                <rect key="frame" x="20" y="461" width="374" height="30"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="Use Current Location">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="UseCurrentLocation:" destination="qtl-cr-cRi" eventType="touchUpInside" id="AiM-PW-yeJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fIz-rJ-l4a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fIz-rJ-l4a" firstAttribute="trailing" secondItem="OoC-rX-7el" secondAttribute="trailing" constant="20" id="2WE-mA-nXp"/>
+                            <constraint firstItem="JFS-zK-Htu" firstAttribute="leading" secondItem="fIz-rJ-l4a" secondAttribute="leading" constant="20" id="34u-sq-EyX"/>
                             <constraint firstItem="fIz-rJ-l4a" firstAttribute="trailing" secondItem="cxN-rf-Ccq" secondAttribute="trailing" constant="20" id="4hT-8i-xoE"/>
                             <constraint firstItem="cxN-rf-Ccq" firstAttribute="leading" secondItem="fIz-rJ-l4a" secondAttribute="leading" constant="20" id="8DU-uf-UeR"/>
                             <constraint firstItem="OoC-rX-7el" firstAttribute="top" secondItem="fIz-rJ-l4a" secondAttribute="top" constant="50" id="Cun-oK-RfL"/>
                             <constraint firstItem="cxN-rf-Ccq" firstAttribute="top" secondItem="OoC-rX-7el" secondAttribute="bottom" constant="66" id="Djh-15-uYy"/>
+                            <constraint firstItem="F2b-jb-NbG" firstAttribute="top" secondItem="1CA-7D-aDf" secondAttribute="bottom" constant="20" id="G9V-2p-wN9"/>
                             <constraint firstItem="uN7-cG-3SY" firstAttribute="leading" secondItem="fIz-rJ-l4a" secondAttribute="leading" constant="20" id="GDo-U8-G8c"/>
-                            <constraint firstItem="fIz-rJ-l4a" firstAttribute="trailing" secondItem="F2b-jb-NbG" secondAttribute="trailing" constant="20" id="GIk-kh-Raw"/>
+                            <constraint firstItem="fIz-rJ-l4a" firstAttribute="bottom" secondItem="JFS-zK-Htu" secondAttribute="bottom" constant="26" id="HFe-Qa-2sU"/>
                             <constraint firstItem="fIz-rJ-l4a" firstAttribute="trailing" secondItem="BhU-Ud-RJz" secondAttribute="trailing" constant="20" id="M4g-CA-4t7"/>
+                            <constraint firstItem="1CA-7D-aDf" firstAttribute="top" secondItem="BhU-Ud-RJz" secondAttribute="bottom" constant="20" id="PyI-Xd-jaf"/>
                             <constraint firstItem="m72-o7-83v" firstAttribute="leading" secondItem="fIz-rJ-l4a" secondAttribute="leading" constant="20" id="Q0M-CN-1U6"/>
-                            <constraint firstItem="F2b-jb-NbG" firstAttribute="leading" secondItem="fIz-rJ-l4a" secondAttribute="leading" constant="20" id="QT5-6v-gwJ"/>
+                            <constraint firstItem="fIz-rJ-l4a" firstAttribute="trailing" secondItem="F2b-jb-NbG" secondAttribute="trailing" constant="20" id="V7r-1W-gup"/>
+                            <constraint firstItem="fIz-rJ-l4a" firstAttribute="trailing" secondItem="1CA-7D-aDf" secondAttribute="trailing" constant="20" id="VA2-ob-7IW"/>
                             <constraint firstItem="BhU-Ud-RJz" firstAttribute="leading" secondItem="fIz-rJ-l4a" secondAttribute="leading" constant="20" id="Xb2-Mg-RHp"/>
                             <constraint firstItem="fIz-rJ-l4a" firstAttribute="trailing" secondItem="ypY-ns-wgf" secondAttribute="trailing" constant="20" id="ZtX-Ff-Vds"/>
-                            <constraint firstItem="JFS-zK-Htu" firstAttribute="leading" secondItem="fIz-rJ-l4a" secondAttribute="leading" constant="20" id="cac-Nb-yF6"/>
-                            <constraint firstItem="fIz-rJ-l4a" firstAttribute="bottom" secondItem="JFS-zK-Htu" secondAttribute="bottom" constant="56" id="cuG-Hy-m0y"/>
-                            <constraint firstItem="JFS-zK-Htu" firstAttribute="top" secondItem="F2b-jb-NbG" secondAttribute="bottom" constant="50" id="dST-WB-VSd"/>
-                            <constraint firstItem="fIz-rJ-l4a" firstAttribute="trailing" secondItem="JFS-zK-Htu" secondAttribute="trailing" constant="20" id="e1J-lk-0PV"/>
                             <constraint firstItem="OoC-rX-7el" firstAttribute="leading" secondItem="fIz-rJ-l4a" secondAttribute="leading" constant="20" id="eNR-az-GMy"/>
+                            <constraint firstItem="JFS-zK-Htu" firstAttribute="top" secondItem="F2b-jb-NbG" secondAttribute="bottom" constant="30" id="fQ8-q4-1vQ"/>
+                            <constraint firstItem="1CA-7D-aDf" firstAttribute="leading" secondItem="fIz-rJ-l4a" secondAttribute="leading" constant="20" id="fYJ-bX-3bZ"/>
                             <constraint firstItem="m72-o7-83v" firstAttribute="top" secondItem="cxN-rf-Ccq" secondAttribute="bottom" constant="20" id="hwx-yZ-aJ4"/>
                             <constraint firstItem="BhU-Ud-RJz" firstAttribute="top" secondItem="uN7-cG-3SY" secondAttribute="bottom" constant="20" id="iCk-af-jAA"/>
                             <constraint firstItem="fIz-rJ-l4a" firstAttribute="trailing" secondItem="m72-o7-83v" secondAttribute="trailing" constant="20" id="jeM-Iv-tRR"/>
                             <constraint firstItem="ypY-ns-wgf" firstAttribute="leading" secondItem="fIz-rJ-l4a" secondAttribute="leading" constant="20" id="lVN-NB-HyE"/>
-                            <constraint firstItem="F2b-jb-NbG" firstAttribute="top" secondItem="BhU-Ud-RJz" secondAttribute="bottom" constant="20" id="okM-nt-jvH"/>
+                            <constraint firstItem="F2b-jb-NbG" firstAttribute="leading" secondItem="fIz-rJ-l4a" secondAttribute="leading" constant="20" id="ptQ-qG-b1r"/>
                             <constraint firstItem="fIz-rJ-l4a" firstAttribute="trailing" secondItem="uN7-cG-3SY" secondAttribute="trailing" constant="20" id="rEa-P5-66J"/>
+                            <constraint firstItem="fIz-rJ-l4a" firstAttribute="trailing" secondItem="JFS-zK-Htu" secondAttribute="trailing" constant="20" id="sCT-ZK-UVr"/>
                             <constraint firstItem="uN7-cG-3SY" firstAttribute="top" secondItem="ypY-ns-wgf" secondAttribute="bottom" constant="20" id="thp-0f-pRk"/>
                             <constraint firstItem="ypY-ns-wgf" firstAttribute="top" secondItem="m72-o7-83v" secondAttribute="bottom" constant="20" id="vyn-z1-5Bz"/>
                         </constraints>
@@ -152,17 +149,87 @@
                     </tabBar>
                     <connections>
                         <segue destination="qtl-cr-cRi" kind="relationship" relationship="viewControllers" id="75o-3v-vyh"/>
-                        <segue destination="KAh-Wg-Qd0" kind="relationship" relationship="viewControllers" id="3LL-kd-wLh"/>
+                        <segue destination="py3-bY-fHQ" kind="relationship" relationship="viewControllers" id="9Lt-d8-OcR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrC-Co-qMh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-19" y="-182"/>
         </scene>
+        <!--Parking Liist-->
+        <scene sceneID="IC6-1s-dmB">
+            <objects>
+                <viewController id="py3-bY-fHQ" customClass="ParkingListViewController" customModule="CarParking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E9V-k4-EDo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vLe-CY-VFn">
+                                <rect key="frame" x="20" y="140.5" width="374" height="672.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="TQU-Qy-eua" detailTextLabel="Fpc-X4-ru8" style="IBUITableViewCellStyleSubtitle" id="FAV-4p-qrV">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FAV-4p-qrV" id="6Mo-Jj-fwJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TQU-Qy-eua">
+                                                    <rect key="frame" x="20" y="10" width="33" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fpc-X4-ru8">
+                                                    <rect key="frame" x="20" y="31.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="py3-bY-fHQ" id="SLd-XK-43v"/>
+                                    <outlet property="delegate" destination="py3-bY-fHQ" id="P3F-Ic-M7S"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Up Comming Parkings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEt-4f-DYT">
+                                <rect key="frame" x="20" y="74" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="w3o-Ey-AWo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vLe-CY-VFn" firstAttribute="leading" secondItem="w3o-Ey-AWo" secondAttribute="leading" constant="20" id="4aF-s5-tzf"/>
+                            <constraint firstItem="dEt-4f-DYT" firstAttribute="top" secondItem="w3o-Ey-AWo" secondAttribute="top" constant="30" id="GuL-yc-OI9"/>
+                            <constraint firstItem="w3o-Ey-AWo" firstAttribute="bottom" secondItem="vLe-CY-VFn" secondAttribute="bottom" id="QgZ-iz-jy0"/>
+                            <constraint firstItem="dEt-4f-DYT" firstAttribute="leading" secondItem="w3o-Ey-AWo" secondAttribute="leading" constant="20" id="Xdt-zC-BBr"/>
+                            <constraint firstItem="vLe-CY-VFn" firstAttribute="top" secondItem="dEt-4f-DYT" secondAttribute="bottom" constant="40" id="gwV-qD-IEz"/>
+                            <constraint firstItem="w3o-Ey-AWo" firstAttribute="trailing" secondItem="vLe-CY-VFn" secondAttribute="trailing" constant="20" id="lvC-FK-we8"/>
+                            <constraint firstItem="w3o-Ey-AWo" firstAttribute="trailing" secondItem="dEt-4f-DYT" secondAttribute="trailing" constant="20" id="xGU-M5-2kG"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Parking Liist" image="list.bullet.rectangle" catalog="system" selectedImage="list.bullet.rectangle" id="Sgs-gZ-c9U"/>
+                    <connections>
+                        <outlet property="tableViewList" destination="vLe-CY-VFn" id="uKk-Hr-t8D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dQB-BL-9Tx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866.66666666666674" y="197.54464285714286"/>
+        </scene>
     </scenes>
     <resources>
         <image name="car" catalog="system" width="128" height="93"/>
-        <image name="viewfinder" catalog="system" width="128" height="115"/>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

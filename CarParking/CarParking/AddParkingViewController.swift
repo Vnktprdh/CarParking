@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import Firebase
 
-class AddParkingViewController: UIViewController, CLLocationManagerDelegate {
+class AddParkingViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate{
 
     @IBOutlet weak var BuildingCode: UITextField!
     @IBOutlet weak var HoursOfParking: UISegmentedControl!
@@ -29,6 +29,7 @@ class AddParkingViewController: UIViewController, CLLocationManagerDelegate {
     var parkingLocationLat:String!
     var parkingLocationLon:String!
     var dateOfParkingData:Date!
+    var locationAddress:String!
     
     
     override func viewDidLoad() {
@@ -45,6 +46,38 @@ class AddParkingViewController: UIViewController, CLLocationManagerDelegate {
         
         
     }
+    
+    
+    @IBAction func UseCurrentLocation(_ sender: Any) {
+        
+        let location = locationManager.location!
+        
+        geocoder.reverseGeocodeLocation(location, completionHandler: { [self](placemark, error) in
+                    
+                    if error != nil
+                    {
+                        self.alert(Title: "Location Error", Message: nil)
+                    }
+                    else{
+                        
+                        if let _ = placemark, let placemark = placemark?.first{
+                            
+                            self.locationAddress = "\(placemark.name!), \(placemark.locality!), \(placemark.postalCode!)"
+                            
+                            self.ParkingLocation.text = self.locationAddress
+                        }
+                        
+                        
+                        
+                    }
+                    
+                    
+                })
+                
+        
+        
+    }
+    
     
     @IBAction func AddParking(_ sender: Any) {
         
@@ -105,46 +138,44 @@ extension AddParkingViewController{
     
     func getAddress(location : String){
         
-//        geocoder.reverseGeocodeLocation(location, completionHandler: {(placemark, error) in
-//            self.processGeoResponse(withPlacemarks: placemark, error: error)
-//        })
-        
-        
         geocoder.geocodeAddressString(location) { (placementmark, error) in
             self.processGeoResponse(withPlacemarks: placementmark, error: error)
         }
-        
         
     }
     
     func processGeoResponse(withPlacemarks placemarks : [CLPlacemark]?, error : Error?){
         if error != nil{
             self.alert(Title: "Location Error", Message: nil)
+            print(error!)
         }else{
             
             if let placemarks = placemarks, let placemark = placemarks.first{
                 
+                
+                locationAddress = "\(placemark.name!), \(placemark.locality!), \(placemark.postalCode!)"
+                
                 self.parkingLocationLat = "\(placemark.location!.coordinate.latitude)"
                 self.parkingLocationLon = "\(placemark.location!.coordinate.longitude)"
-                
                 let db = Firestore.firestore()
-                
+
                 db.collection("Parking").addDocument(data: [
-                    "BCode" : buildingCodeData,
-                    "Hours" : hoursOfParkingData,
-                    "SuitNo" : suitNumberData,
-                    "CNumber" : carPlateNumberData,
-                    "Date" : dateOfParkingData,
-                    "Lat" : parkingLocationLat,
-                    "Lon" : parkingLocationLon
+                    "BCode" : buildingCodeData!,
+                    "Hours" : hoursOfParkingData!,
+                    "SuitNo" : suitNumberData!,
+                    "CNumber" : carPlateNumberData!,
+                    "Date" : dateOfParkingData!,
+                    "Lat" : parkingLocationLat!,
+                    "Lon" : parkingLocationLon!,
+                    "Location" : locationAddress!
 //                    "E-mail" : Auth.auth().currentUser?.email
                 ]){ err in
-                    
+
                     if(err != nil)
                     {
-                        print(err)
+                        print(err!)
                         self.alert(Title: "Saving Document Unsucessful ", Message: nil)
-                        
+
                     }
                     else
                     {
@@ -156,7 +187,7 @@ extension AddParkingViewController{
                         self.DateOfParking.date = Date()
                         self.alert(Title: "Parking added sucessfully", Message: nil)
                     }
-                    
+
                 }
                 
             }else{

@@ -11,14 +11,14 @@ import Firebase
 class ParkingListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-   
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         tableViewList.reloadData()
     }
     
     
     var initialArray:[arryObject] = []
-
+    var selectedIndes:Int!
     @IBOutlet weak var tableViewList: UITableView!
     
     override func viewDidLoad() {
@@ -39,7 +39,29 @@ class ParkingListViewController: UIViewController, UITableViewDelegate, UITableV
         
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndes = indexPath.row
+        performSegue(withIdentifier: "DetailParking", sender: self)
+    }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? ParkingViewController
+        
+        vc?.Pbno = initialArray[selectedIndes].BCode
+        vc?.Plno = initialArray[selectedIndes].CNumber
+        vc?.Pdate = initialArray[selectedIndes].Date
+        vc?.lat = initialArray[selectedIndes].Lat
+        vc?.lon = initialArray[selectedIndes].Lon
+        vc?.Plocation = initialArray[selectedIndes].Location!
+        vc?.Psno = initialArray[selectedIndes].SuitNo
+        vc?.Phours = initialArray[selectedIndes].Hours
+        
+        print(initialArray[selectedIndes].Location)
+    }
+    
+    
 }
 
 extension ParkingListViewController{
@@ -65,7 +87,6 @@ extension ParkingListViewController{
                     
                     let u:arryObject = arryObject(bcode: bno!, hours: hours!, suitNo: sun!, cNumber: lno!, date: date, lat: loclat!, Lon: loclon!, Location: loc!)
                     self.initialArray.append(u)
-                    print("\(document.documentID) => \(document.data())")
                 }
                 
             }

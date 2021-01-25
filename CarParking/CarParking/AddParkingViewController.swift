@@ -91,6 +91,23 @@ class AddParkingViewController: UIViewController, CLLocationManagerDelegate, UIT
         }
         else{
             
+            if(BuildingCode.text!.count != 5)
+            {
+                self.alert(Title: "Wrong Building Code", Message: "Please enter a correct building code and try again!")
+                return
+            }
+            else if(CarPlateNumber.text!.count < 2 || CarPlateNumber.text!.count > 8)
+            {
+                self.alert(Title: "Wrong Car Plate Number", Message: "Please enter a correct Car Plate Number and try again!")
+                return
+            }
+            else if(SuitNumber.text!.count < 2 || SuitNumber.text!.count > 5 )
+            {
+                self.alert(Title: "Wrong Suit Number", Message: "Please enter a correct Suit Number and try again!")
+                return
+            }
+            
+            
             if(Date() > DateOfParking.date)
             {
                 alert(Title: "Invalid Date", Message: "Your Date must not be lesser than todays date!")

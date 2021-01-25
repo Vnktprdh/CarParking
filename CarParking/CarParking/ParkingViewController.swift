@@ -44,10 +44,15 @@ class ParkingViewController: UIViewController {
     
 
     @IBAction func getLocation(_ sender: Any) {
-        
-        
-        
-        
+        performSegue(withIdentifier: "GetLocation", sender: self)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? MapViewController
+        vc?.lat = self.lat
+        vc?.lon = self.lon
+        vc?.name = self.Plocation
+    }
+    
+    
 }

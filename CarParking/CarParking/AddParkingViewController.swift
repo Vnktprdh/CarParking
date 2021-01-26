@@ -2,7 +2,7 @@
 //  AddParkingViewController.swift
 //  CarParking
 //
-//  Created by Gokul Murugan on 2021-01-24.
+//  Created by Venkat 101287100 on 2021-01-24.
 //
 
 import UIKit
@@ -18,6 +18,10 @@ class AddParkingViewController: UIViewController, CLLocationManagerDelegate, UIT
     @IBOutlet weak var ParkingLocation: UITextField!
     @IBOutlet weak var DateOfParking: UIDatePicker!
     
+    
+    @IBAction func tap(_ sender: Any) {
+        view.endEditing(true)
+    }
     
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()

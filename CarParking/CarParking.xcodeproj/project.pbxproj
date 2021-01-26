@@ -13,12 +13,12 @@
 		921393C125BE171100C37790 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921393BF25BE171100C37790 /* Main.storyboard */; };
 		921393C325BE171600C37790 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921393C225BE171600C37790 /* Assets.xcassets */; };
 		921393C625BE171600C37790 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921393C425BE171600C37790 /* LaunchScreen.storyboard */; };
-		921393E425BE218900C37790 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 921393E325BE218900C37790 /* GoogleService-Info.plist */; };
 		921393E725BE222100C37790 /* AddParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921393E625BE222100C37790 /* AddParkingViewController.swift */; };
 		921393EB25BE468C00C37790 /* ParkingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921393EA25BE468C00C37790 /* ParkingListViewController.swift */; };
 		921393EE25BE504A00C37790 /* arryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921393ED25BE504A00C37790 /* arryObject.swift */; };
 		921393F125BE6C6E00C37790 /* ParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921393F025BE6C6E00C37790 /* ParkingViewController.swift */; };
 		921393F425BE77EF00C37790 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921393F325BE77EF00C37790 /* MapViewController.swift */; };
+		92F2A9A825BFC0BD00385C4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F2A9A725BFC0BD00385C4A /* GoogleService-Info.plist */; };
 		EA96C6DD5A2CC9C6EF409164 /* Pods_CarParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0942DC1BDC5200ED83B8F2F /* Pods_CarParking.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,12 +33,12 @@
 		921393C225BE171600C37790 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		921393C525BE171600C37790 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		921393C725BE171600C37790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		921393E325BE218900C37790 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		921393E625BE222100C37790 /* AddParkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParkingViewController.swift; sourceTree = "<group>"; };
 		921393EA25BE468C00C37790 /* ParkingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingListViewController.swift; sourceTree = "<group>"; };
 		921393ED25BE504A00C37790 /* arryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arryObject.swift; sourceTree = "<group>"; };
 		921393F025BE6C6E00C37790 /* ParkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingViewController.swift; sourceTree = "<group>"; };
 		921393F325BE77EF00C37790 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		92F2A9A725BFC0BD00385C4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0942DC1BDC5200ED83B8F2F /* Pods_CarParking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarParking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,7 +92,7 @@
 		921393B825BE171100C37790 /* CarParking */ = {
 			isa = PBXGroup;
 			children = (
-				921393E325BE218900C37790 /* GoogleService-Info.plist */,
+				92F2A9A725BFC0BD00385C4A /* GoogleService-Info.plist */,
 				921393B925BE171100C37790 /* AppDelegate.swift */,
 				921393BB25BE171100C37790 /* SceneDelegate.swift */,
 				921393BD25BE171100C37790 /* ViewController.swift */,
@@ -169,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				921393C625BE171600C37790 /* LaunchScreen.storyboard in Resources */,
-				921393E425BE218900C37790 /* GoogleService-Info.plist in Resources */,
+				92F2A9A825BFC0BD00385C4A /* GoogleService-Info.plist in Resources */,
 				921393C325BE171600C37790 /* Assets.xcassets in Resources */,
 				921393C125BE171100C37790 /* Main.storyboard in Resources */,
 			);

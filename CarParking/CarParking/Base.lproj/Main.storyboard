@@ -104,6 +104,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fIz-rJ-l4a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="fIz-rJ-l4a" firstAttribute="trailing" secondItem="OoC-rX-7el" secondAttribute="trailing" constant="20" id="2WE-mA-nXp"/>
                             <constraint firstItem="JFS-zK-Htu" firstAttribute="leading" secondItem="fIz-rJ-l4a" secondAttribute="leading" constant="20" id="34u-sq-EyX"/>
@@ -134,6 +135,9 @@
                             <constraint firstItem="uN7-cG-3SY" firstAttribute="top" secondItem="ypY-ns-wgf" secondAttribute="bottom" constant="20" id="thp-0f-pRk"/>
                             <constraint firstItem="ypY-ns-wgf" firstAttribute="top" secondItem="m72-o7-83v" secondAttribute="bottom" constant="20" id="vyn-z1-5Bz"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wTC-gI-TdD" appends="YES" id="FEE-Nc-2kl"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="car" catalog="system" id="wzw-pS-8Ft"/>
                     <connections>
@@ -146,6 +150,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLp-Lj-yAR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wTC-gI-TdD">
+                    <connections>
+                        <action selector="tap:" destination="qtl-cr-cRi" id="6oL-qE-ju9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2686.9565217391305" y="-486.16071428571428"/>
         </scene>

@@ -80,11 +80,14 @@ extension ParkingListViewController{
                     let loclon = data["Lon"] as? String
                     let sun = data["SuitNo"] as? String
                     let hours = data["Hours"] as? String
+                    let email = data["E-mail"] as? String
                     guard let stamp = data["Date"] as? Timestamp else {return}
                     let date = stamp.dateValue()
+                    let u:arryObject = arryObject(bcode: bno!, hours: hours!, suitNo: sun!, cNumber: lno!, date: date, lat: loclat!, Lon: loclon!, Location: loc!, email: email!)
+                    if(email?.lowercased() == Auth.auth().currentUser?.email?.lowercased()){
+                        self.initialArray.append(u)
+                    }
                     
-                    let u:arryObject = arryObject(bcode: bno!, hours: hours!, suitNo: sun!, cNumber: lno!, date: date, lat: loclat!, Lon: loclon!, Location: loc!)
-                    self.initialArray.append(u)
                 }
                 
             }

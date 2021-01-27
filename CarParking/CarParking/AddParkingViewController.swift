@@ -19,10 +19,6 @@ class AddParkingViewController: UIViewController, CLLocationManagerDelegate, UIT
     @IBOutlet weak var DateOfParking: UIDatePicker!
     
     
-    @IBAction func tap(_ sender: Any) {
-        view.endEditing(true)
-    }
-    
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
     
@@ -191,8 +187,8 @@ extension AddParkingViewController{
                     "Date" : dateOfParkingData!,
                     "Lat" : parkingLocationLat!,
                     "Lon" : parkingLocationLon!,
-                    "Location" : locationAddress!
-//                    "E-mail" : Auth.auth().currentUser?.email
+                    "Location" : locationAddress!,
+                    "E-mail" : Auth.auth().currentUser?.email
                 ]){ err in
 
                     if(err != nil)

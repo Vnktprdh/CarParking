@@ -17,8 +17,9 @@ class arryObject{
     var Lat:String!
     var Lon:String!
     var Location:String!
+    var Email:String
     
-    init(bcode:String, hours:String, suitNo:String, cNumber:String, date:Date, lat:String, Lon:String, Location:String) {
+    init(bcode:String, hours:String, suitNo:String, cNumber:String, date:Date, lat:String, Lon:String, Location:String, email:String) {
         
         self.BCode = bcode
         self.Hours = hours
@@ -28,6 +29,7 @@ class arryObject{
         self.Lat = lat
         self.Lon = Lon
         self.Location = Location
+        self.Email = email
         
     }
     

@@ -2,7 +2,7 @@
 //  ParkingViewController.swift
 //  CarParking
 //
-//  Created by Venkat 101287100n on 2021-01-24.
+//  Created by Venkat 101287100 on 2021-01-24.
 //
 
 import UIKit

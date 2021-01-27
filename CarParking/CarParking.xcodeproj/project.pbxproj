@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5303EA3F25C11D86004B3647 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5303EA3E25C11D86004B3647 /* GoogleService-Info.plist */; };
+		53A18FEE25C145B900126807 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53A18FED25C145B900126807 /* GoogleService-Info.plist */; };
 		921393BA25BE171100C37790 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921393B925BE171100C37790 /* AppDelegate.swift */; };
 		921393BC25BE171100C37790 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921393BB25BE171100C37790 /* SceneDelegate.swift */; };
 		921393BE25BE171100C37790 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921393BD25BE171100C37790 /* ViewController.swift */; };
@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5303EA3E25C11D86004B3647 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		53A18FED25C145B900126807 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A5A76DBA576A1F2B4040B2B /* Pods-CarParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarParking.release.xcconfig"; path = "Target Support Files/Pods-CarParking/Pods-CarParking.release.xcconfig"; sourceTree = "<group>"; };
 		6C648AFA0FBE2461E5F3FE7A /* Pods-CarParking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarParking.debug.xcconfig"; path = "Target Support Files/Pods-CarParking/Pods-CarParking.debug.xcconfig"; sourceTree = "<group>"; };
 		921393B625BE171100C37790 /* CarParking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarParking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,9 +96,9 @@
 		921393B825BE171100C37790 /* CarParking */ = {
 			isa = PBXGroup;
 			children = (
-				5303EA3E25C11D86004B3647 /* GoogleService-Info.plist */,
 				921393B925BE171100C37790 /* AppDelegate.swift */,
 				921393BB25BE171100C37790 /* SceneDelegate.swift */,
+				53A18FED25C145B900126807 /* GoogleService-Info.plist */,
 				921393BD25BE171100C37790 /* ViewController.swift */,
 				92EE220825C10B5900DF9F88 /* AddUserViewController.swift */,
 				921393BF25BE171100C37790 /* Main.storyboard */,
@@ -175,7 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				921393C625BE171600C37790 /* LaunchScreen.storyboard in Resources */,
-				5303EA3F25C11D86004B3647 /* GoogleService-Info.plist in Resources */,
+				53A18FEE25C145B900126807 /* GoogleService-Info.plist in Resources */,
 				921393C325BE171600C37790 /* Assets.xcassets in Resources */,
 				921393C125BE171100C37790 /* Main.storyboard in Resources */,
 			);
